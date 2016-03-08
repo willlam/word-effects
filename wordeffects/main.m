@@ -59,21 +59,23 @@ int main(int argc, const char * argv[]) {
 			NSString *canadaString = [inputString stringByAppendingString:@", eh?"];
 			NSLog(@"%@", canadaString);
 			
-		} else if ([inputOption isEqualToString:@"5"]) {
+			// Respond
+		} else if ([inputMenuOption containsString:@"5"]) {
 			if ([inputString hasSuffix:@"?"]) {
-				NSLog(@"I don't know!");
-			} else if ([inputString hasSuffix:@"!"]) {
-				NSLog(@"Whoa, calm down!");
+				NSLog(@"I DUNNOOOOO....");
+			} else if ([inputString hasSuffix:@"?"]) {
+				NSLog(@"YO CALM DOWN OK?");
 			} else {
-				NSLog(@"%@", inputString);
+				NSLog(@"You have to type ! or ? to get a proper response!");
 			}
-			
-		} else if ([inputOption isEqualToString:@"6"]) {
-			NSString *despaceString = [inputString stringByReplacingOccurrencesOfString:@" " withString:@"-"];
-			NSLog(@"%@", despaceString);
-			
-		} else {
-			NSLog(@"That is not a valid option, please choose another!\n");
+			// De-space-ify
+		} else if ([inputMenuOption containsString:@"6"]) {
+			NSString *despaceify = [inputString stringByReplacingOccurrencesOfString:@" " withString:@"-"];
+			NSLog(@"%@", despaceify);
+		}
+		
+		else {
+			NSLog(@"\nYour input was invalid");
 		}
 		
 	}
